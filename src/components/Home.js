@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import HomeComp from './homeComp/HomeComp';
 
 import { createSession } from '../actions';
 
@@ -14,7 +15,7 @@ export class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home page</h1>
+        <HomeComp />
       </div>
     );
   }

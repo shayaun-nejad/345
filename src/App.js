@@ -2,8 +2,11 @@ import React from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Helmet from 'react-helmet';
+import { imagePath } from './utils/assetUtils';
 
 import * as metadata from './metadata';
+
+import styles from './main.scss';
 
 const LoadableHome = Loadable({
   loader: () => import(/* webpackChunkName: 'home' */ './components/Home'),
@@ -30,12 +33,18 @@ const App = () => (
       noscript={metadata.noscript}
     />
 
-    <nav>
-      <NavLink exact to="/" activeClassName="active">
-        Home
-      </NavLink>{' '}
-      <NavLink exact to="/about" activeClassName="active">
-        About
+    <nav id="navigation">
+      <img src={imagePath('keyswap.png')} id={styles.images} alt="" />
+      <div id="pair">
+        <NavLink exact to="/" activeClassName="active" id="links">
+          Sell
+        </NavLink>
+        <NavLink exact to="/about" activeClassName="active" id="links">
+          Buy
+        </NavLink>
+      </div>
+      <NavLink exact to="/login" activeClassName="#" id="login">
+        Log-in
       </NavLink>
     </nav>
 
